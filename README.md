@@ -5,7 +5,7 @@ An online operating system, made for fun ;) !
 
 You can use it as you wish.
 
-**[Use it at this link ;\) !](http://matrobot.free.fr/acos/)**
+**[Use it at this link ;\) !](http://matrobot.free.fr/acos-reamstered/)**
 
 # Features
 ACOS works with cookies and apps.
