@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Title";
+  src: url("../assets/fonts/new_comic_title/newcomictitle.ttf"); }
+@font-face {
+  font-family: "Main";
+  src: url("../assets/fonts/quicksand/Quicksand_Book.otf"); }
+body {
+  font-family: Main; }
+
+h1 {
+  font-family: "Title";
+  letter-spacing: 1px; }
+
+.ACOS_Red {
+  color: #CA1710;
+  text-shadow: 1px 1px 1px #777777; }
+
+.ACOS_Blue {
+  color: #0043C6;
+  text-shadow: 1px 1px 1px #777777; }
+
+#resizer {
+  display: none;
+  position: absolute;
+  right: 35%;
+  top: 35%;
+  z-index: 4000; }
+
+#MainNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 4px; }
+  #MainNavbar div {
+    width: 100%;
+    height: 10%;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); }
+    #MainNavbar div img {
+      width: 90%; }
+
+iframe {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 60%;
+  z-index: 500;
+  box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.7); }
