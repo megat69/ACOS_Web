@@ -1,0 +1,3 @@
+<script>
+	const input('')
+</script>

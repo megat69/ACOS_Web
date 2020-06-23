@@ -3,6 +3,8 @@
 	src: url("../../assets/fonts/quicksand/Quicksand_Book.otf");
 }
 
+$border-color: #0cede9;
+
 body {
 	overflow: hidden;
 }
@@ -25,7 +27,7 @@ form {
 		width: 60%;
 		height: 30%;
 		text-align: center;
-		border: 2px solid #0cede9;
+		border: 2px solid $border-color;
 		border-radius: 12px;
 		background-color: #dddddd;
 		padding: 40px;

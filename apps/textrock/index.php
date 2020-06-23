@@ -2,6 +2,7 @@
 	$translations_path = "../../translations/";
 	$home_path = "../../";
 	require $home_path.'lang_select.php';
+	sleep(1);
 	if (isset($_COOKIE["ACOS_Theme"])) {
 		$Theme = $_COOKIE["ACOS_Theme"];
 	} else {
@@ -23,6 +24,8 @@
 	<script src="<?php echo $home_path; ?>main/script.js"></script>
 	<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 	<script>
+		let displayLoadForm = false;
+
 		function newFile() {
 			if (confirm('<?php include $translations_path.'apps/textrock/Menu__File_confirm_delete_'.$Lang; ?>') == true) {
 				document.getElementById('MainTextArea').value = '';
@@ -52,8 +55,40 @@
 		}
 
 		function loadFromTxt() {
-			console.log('Not atm.')
+			if (displayLoadForm == false) {
+				document.getElementById('LoadForm').style.display = "block";
+				document.getElementById('Overlay').style.display = "block";
+				displayLoadForm = true;
+			} else {
+				document.getElementById('LoadForm').style.display = "none";
+				document.getElementById('Overlay').style.display = "none";
+				displayLoadForm = false;
+			}
 		}
+
+		/*let file = document.getElementById("File_Input").files[0];
+		let reader = new FileReader();
+		reader.onload = function (e) {
+		    let textArea = document.getElementById("MainTextArea");
+		    textArea.value = e.target.result;
+		};
+		reader.readAsText(file);*/
+
+		function ReadFile(e){
+			let input = document.getElementById('File_Input');
+			let reader = new FileReader();
+			reader.onload = function () {
+				console.log(reader.result);
+				if (confirm("<?php include $translations_path.'apps/textrock/Menu__File_confirm_delete_'.$Lang; ?>") == true) {
+					document.getElementById('MainTextArea').value = reader.result;
+				}
+				//return reader.result;
+			}
+			const text = reader.readAsText(input.files[0]);
+
+			loadFromTxt();
+		}
+		
 	</script>
 </head>
 <body>
@@ -81,6 +116,21 @@
 			Edit
 		</div>
 	</div>
-	<textarea id="MainTextArea"><?php if (isset($_COOKIE['TextRock_FileSaved'])) { echo str_replace('ACOSENTER_CHAR', PHP_EOL, htmlspecialchars($_COOKIE['TextRock_FileSaved'])); } ?></textarea>
+	<textarea id="MainTextArea"><?php
+		if (isset($_COOKIE['TextRock_FileSaved'])) {
+			echo str_replace('ACOSENTER_CHAR', PHP_EOL, htmlspecialchars($_COOKIE['TextRock_FileSaved']));
+		}
+		if (!empty($_FILES)) {
+			$name = $_FILES["file"]["name"];
+			echo file_get_contents($name);
+		}
+		?>
+		</textarea>
+	<div id="Overlay"></div>
+	<form id="LoadForm" method="post" action="?foreground_app=textrock">
+		<input type="file" name="file" id="File_Input" accept=".txt" onchange="ReadFile();" /><br/>
+		<button type="submit"><?php include $translations_path.'apps/build-it/submit_'.$Lang; ?></button>
+		<img src="<?php echo $home_path.'assets/img/ACOS_Bin.png'; ?>" title="Close" onclick="loadFromTxt();"/>
+	</form>
 </body>
 </html>

@@ -15,6 +15,7 @@
 	}
 
 	require $home_path.'lang_select.php';
+	sleep(1);
 	if (isset($_COOKIE["ACOS_Theme"])) {
 		$Theme = $_COOKIE["ACOS_Theme"];
 	} else {
@@ -38,15 +39,15 @@
 	<?php require '../header.php'; ?>
 	<?php
 		if ($_COOKIE['ACOS_Lang'] == 'fr') {
-			$SelctedLang = 0;
-		} else {
 			$SelctedLang = 1;
+		} else {
+			$SelctedLang = 0;
 		}
 
 		if ($_COOKIE['ACOS_Theme'] == 'light') {
-			$SelctedTheme = 0;
-		} else {
 			$SelctedTheme = 1;
+		} else {
+			$SelctedTheme = 0;
 		}
 	?>
 	<form method="post" action="?foreground_app=build-it&lang=<?php echo $Lang; ?>">

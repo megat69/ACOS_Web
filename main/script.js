@@ -53,14 +53,17 @@ function now_resizeIFrame() {
 }
 
 function changeLang(given_value, foreground_app) {
-	document.cookie = "ACOS_Lang="+ given_value +"; expires=Tue, 25 Mar 2032 12:00:00 UTC; path=/acos-remastered";
-	//alert(getCookie("ACOS_Lang"));
-	document.location.href = "../../main/?foreground_app="+foreground_app+"&lang="+given_value;
+	if (getCookie('ACOS_Lang') != given_value) {
+		document.cookie = "ACOS_Lang="+ given_value +"; expires=Tue, 25 Mar 2032 12:00:00 UTC; path=/acos-remastered";
+		document.location.href = "../../main/?foreground_app="+foreground_app+"&lang="+given_value;
+	}
 }
 
 function changeTheme(given_value) {
-	document.cookie = "ACOS_Theme="+ given_value +"; expires=Tue, 25 Mar 2032 12:00:00 UTC; path=/acos-remastered";
-	document.location.reload(true);
+	if (getCookie('ACOS_Theme') != given_value) {
+		document.cookie = "ACOS_Theme="+ given_value +"; expires=Tue, 25 Mar 2032 12:00:00 UTC; path=/acos-remastered";
+		document.location.reload(true);
+	}
 }
 
 /*function dragElement(elmnt) {

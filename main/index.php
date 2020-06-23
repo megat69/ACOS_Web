@@ -2,6 +2,7 @@
 	$translations_path = "../translations/";
 	$home_path = "../";
 	require $home_path.'lang_select.php';
+	sleep(1);
 	if (isset($_COOKIE["ACOS_Theme"])) {
 		$Theme = $_COOKIE["ACOS_Theme"];
 	} else {

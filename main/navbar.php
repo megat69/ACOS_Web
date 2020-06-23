@@ -2,6 +2,7 @@
 	$translations_path = "../translations/";
 	$home_path = "../";
 	require $home_path.'lang_select.php';
+	sleep(1);
 ?>
 <nav id="MainNavbar">
 	<div title="<?php include $translations_path.'navbar/return_home_'.$Lang; ?>" onclick="document.location.href = '<?php echo $home_path.'main/'; ?>';">
