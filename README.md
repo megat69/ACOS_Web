@@ -1,3 +1,5 @@
+![Discord](https://img.shields.io/discord/718802975153324093?label=Discord%20server) ![GitHub repo size](https://img.shields.io/github/repo-size/megat69/ACOS?label=Repository%20size) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/megat69/ACOS?label=Last%20release) ![OS Support](https://img.shields.io/badge/OS%20Support-Windows%2C%20Mac%2C%20Linux-brightgreen)
+
 # ACOS
 An online operating system, made for fun ;) !
 
