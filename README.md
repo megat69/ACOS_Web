@@ -32,6 +32,32 @@ Allows you to browse for a few apps, and install them.
 # APIs
 Soon !
 
+# How to install
+First, download the `acos-remastered.zip` from the latest version.
+
+Then depends of your platform :
+
+## Windows
+Download [WAMPServer](https://www.wampserver.com/).
+
+Run the downloaded executable, and install it.
+
+Then, go in the folder where you installed WAMPServer, normally named `wamp64`.
+
+Go in the folder `www`, and paste the ZIP.
+
+Extract the ZIP in a folder named `acos-remastered`.
+
+***Pay attention :** If you open the folder `acos-remastered`, and it contains another folder `acos-remastered`, move the content of this second folder into the first. Then delete this second folder. Otherwise, this will not work.*
+
+## Mac
+Apply the Windows procedure, but with [MAMP](https://www.mamp.info/en/downloads/).
+
+## Mac
+Same as Windows, but with [XAMPP](https://www.apachefriends.org/fr/index.html).
+
+**Then, go in your favourite browser and type `localhost/acos-remastered/` in the URL bar.**
+
 # Changelogs
 ## Release 1.0 !
 - Filesystem
