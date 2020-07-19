@@ -53,7 +53,7 @@ Extract the ZIP in a folder named `acos-remastered`.
 ## Mac
 Apply the Windows procedure, but with [MAMP](https://www.mamp.info/en/downloads/).
 
-## Mac
+## Linux
 Same as Windows, but with [XAMPP](https://www.apachefriends.org/fr/index.html).
 
 **Then, go in your favourite browser and type `localhost/acos-remastered/` in the URL bar.**
