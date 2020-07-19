@@ -1,0 +1,61 @@
+$background: #c4c4c4;
+$app-background: #dadada;
+
+body {
+	overflow-x: hidden;
+}
+
+header {
+	z-index: 100;
+	/*position: fixed;
+	top: 0;
+	left: 0;*/
+}
+
+#Main {
+	padding-left: 9px;
+	padding-top: 5%;
+	padding-right: 0;
+	padding-bottom: 3%;
+	margin-right: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+
+	#Name {
+		padding-left: 18%;
+	}
+
+	#Image img {
+		margin-left: 12%;
+		max-width: 500px;
+		min-width: 350px;
+	}
+
+	#Install {
+		span {
+			background: rgb(93,189,233);
+			background: linear-gradient(151deg, rgba(93,189,233,1) 0%, rgba(29,90,181,1) 100%);
+			color: white;
+			padding: 4px;
+			width: auto;
+			font-weight: bold;
+			border-radius: 6px;
+			border: white 1px solid;
+			font-size: 1.7em;
+			cursor: pointer;
+			transition: box-shadow 200ms;
+			box-shadow: 0px 0px 0px #777777;
+			&:hover {
+				box-shadow: 6px 6px 6px #777777;
+			}
+		}
+		margin-right: 12%;
+		img {
+			height: 1.2em;
+		}
+	}
+}

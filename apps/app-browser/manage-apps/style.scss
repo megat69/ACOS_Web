@@ -1,0 +1,21 @@
+#YourApps {
+	display: grid;
+	grid-template-columns: repeat(3, 28%);
+  	grid-gap: 3%;
+  	grid-auto-rows: minmax(100px, auto);
+	div {
+		//padding-left: 25%;
+		padding-top: 2%;
+		background-color: #d1d1d1;
+		border-radius: 4px;
+		text-align: center;
+		img {
+			max-width: 150px;
+		}
+		.DeleteApp {
+			padding-bottom: 2%;
+			padding-right: 1%;
+		}
+	}
+}
+	

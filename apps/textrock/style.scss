@@ -34,6 +34,29 @@ $border-color: #0cede9;
 	#Menu__File:hover #Menu__File__Dropdown {
 		display: block;
 	}
+
+	#Menu__Edit__Dropdown {
+		display: none;
+		cursor: pointer;
+		position: relative;
+		//left: -20%;
+		margin-left: 25%;
+		div {
+			background-color: grey;
+			padding: 4px;
+			padding-right: 120%;
+			border-radius: 6px;
+			img {
+				width: 25%;
+			}
+		}
+	}
+	#Menu__Edit {
+		display: inline-block;
+	}
+	#Menu__Edit:hover #Menu__Edit__Dropdown {
+		display: block;
+	}
 }
 
 #MainTextArea {
@@ -61,7 +84,7 @@ $border-color: #0cede9;
 	left: 0;
 }
 
-#LoadForm {
+form {
 	z-index: 150;
 	background-color: white;
 	width: 70%;

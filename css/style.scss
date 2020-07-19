@@ -45,14 +45,18 @@ h1 {
 	flex-direction: column;
 	justify-content: start;
 	padding-left: 4px;
-
+	overflow-x: hidden;
+	overflow-y: scroll;
 	div {
 		width: 100%;
 		height: 10%;
 		background-color: rgba(0, 0, 0, 0.2);
-		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		&:last-child {
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		}
 		img {
 			width: 90%;
+			max-height: 90%;
 		}
 	}
 }

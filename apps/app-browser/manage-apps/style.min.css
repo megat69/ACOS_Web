@@ -1,0 +1,1 @@
+#YourApps{display:grid;grid-template-columns:repeat(3, 28%);grid-gap:3%;grid-auto-rows:minmax(100px, auto)}#YourApps div{padding-top:2%;background-color:#d1d1d1;border-radius:4px;text-align:center}#YourApps div img{max-width:150px}#YourApps div .DeleteApp{padding-bottom:2%;padding-right:1%}

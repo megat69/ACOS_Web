@@ -1,0 +1,65 @@
+$background: #c4c4c4;
+$app-background: #dadada;
+
+body {
+	overflow-x: hidden;
+}
+
+header {
+	z-index: 100;
+	/*position: fixed;
+	top: 0;
+	left: 0;*/
+}
+
+#Main {
+	padding-left: 9px;
+	padding-top: 5%;
+	padding-right: 0;
+	padding-bottom: 3%;
+	margin-right: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+}
+
+#ManageApps {
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+h1 {
+	text-align: center;
+}
+.Center {
+	text-align: center;
+}
+
+#Announcement_FeaturedApps {
+	cursor: pointer;
+}
+#FeaturedApps {
+	display: grid;
+	grid-template-columns: repeat(3, 28%);
+  	grid-gap: 3%;
+  	grid-auto-rows: minmax(100px, auto);
+  	.App {
+  		padding: 4%;
+  		background-color: $background;
+  		border-radius: 6px;
+  		box-shadow: 6px 6px 6px $app-background;
+  		transition: box-shadow 300ms, background-color 250ms;
+  		&:hover {
+  			box-shadow: 12px 12px 12px $app-background;
+  			background-color: darken($app-background, 10);
+  		}
+  		//border: 3px inset grey;
+  		img {
+  			max-width: 90%;
+  			max-height: 100px;
+  		}
+  	}
+}

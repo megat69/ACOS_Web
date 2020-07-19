@@ -16,12 +16,7 @@
 
 	require $home_path.'lang_select.php';
 	sleep(1);
-	if (isset($_COOKIE["ACOS_Theme"])) {
-		$Theme = $_COOKIE["ACOS_Theme"];
-	} else {
-		$Theme = "dark";
-		setcookie('ACOS_Theme', 'dark', time() + 365*24*3600, '/acos-remastered');
-	}
+	require $home_path.'theme_select.php';
 	$Icon = $home_path.'assets/img/ACOS_BuildIt.png';
 	$Name = $translations_path.'navbar/build_it_'.$Lang;
 ?>
@@ -77,6 +72,8 @@
 					}
 				?>><?php include $translations_path.'apps/build-it/french_'.$Lang; ?></option>
 			</select><br/><br/>
+
+			<?php include $translations_path.'apps/build-it/CustomBackground_'.$Lang; ?> : <input type="url" name="CustomImage" id="CustomImage" onchange="parent.customBackground(document.getElementById('CustomImage').value);" value="<?php if (isset($_COOKIE['ACOS_Background'])) { echo str_replace('CUSTOM:', '', htmlspecialchars($_COOKIE['ACOS_Background'])); } ?>" /> <img src="<?php echo $home_path; ?>assets/img/ACOS_Bin.png" onclick="document.getElementById('CustomImage').value = 'none'; parent.customBackground(document.getElementById('CustomImage').value);"/>
 
 			<!button type="submit"><?php //include $translations_path.'apps/build-it/submit_'.$Lang; ?><!/button>
 

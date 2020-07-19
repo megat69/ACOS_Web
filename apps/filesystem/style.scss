@@ -1,0 +1,62 @@
+body {
+	overflow-x: hidden;
+}
+
+header {
+	z-index: 100;
+}
+
+#Main {
+	padding-top: 5%;
+	padding-left: 12px;
+	padding-bottom: 5%;
+	/*display: flex;
+	justify-content: start;
+	flex-direction: row;
+	flex-wrap: nowrap;*/
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(10px, auto);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	text-align: center;
+	img {
+		width: 40%;
+	}
+	.LaunchDiv {
+		cursor: pointer;
+		//flex: 1 0 21%;
+	}
+}
+
+.ContextMenu {
+	$ContextMenuColor: #3e3e3e;
+	width: 15%;
+	height: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: $ContextMenuColor;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	border-radius: 6px;
+	display: none;
+	div {
+		transition: background-color 300ms linear;
+		padding: 12px;
+	}
+	div:hover {
+		background-color: darken($ContextMenuColor, 10%);
+		cursor: pointer;
+	}
+	#DeleteFolder {
+		color: #cc1d02;
+	}
+}

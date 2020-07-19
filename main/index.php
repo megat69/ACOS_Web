@@ -3,11 +3,9 @@
 	$home_path = "../";
 	require $home_path.'lang_select.php';
 	sleep(1);
-	if (isset($_COOKIE["ACOS_Theme"])) {
-		$Theme = $_COOKIE["ACOS_Theme"];
-	} else {
-		$Theme = "dark";
-		setcookie('ACOS_Theme', 'dark', time() + 365*24*3600, '/acos-remastered');
+	require $home_path.'theme_select.php';
+	if (!isset($_COOKIE['ACOS_InstalledApps'])) {
+		setcookie('ACOS_InstalledApps', '', time() + 365*24*3600, '/acos-remastered');
 	}
 ?>
 <!DOCTYPE html>
@@ -20,8 +18,9 @@
 	<link rel="icon" href="<?php echo $home_path; ?>assets/img/ACOS_Logo.png"/>
 	<title>ACOS</title>
 	<script src="script.js"></script>
+	<?php include $home_path.'custom_background.php'; ?>
 </head>
-<body onclick="resizeIFrame();">
+<body onclick="resizeIFrame();" oncontextmenu="return false">
 	<h1 align="center">
 		<span class="ACOS_Red">AC</span><span class="ACOS_Blue">OS</span> - <?php include $translations_path.'main/title_'.$Lang ?>
 	</h1>
@@ -29,7 +28,7 @@
 	<?php
 		// Foreground app
 		if (isset($_GET['foreground_app'])) {
-			echo '<iframe id="foreground_app" src="../apps/'.htmlspecialchars($_GET['foreground_app']).'/?lang='.$Lang.'"></iframe>';
+			echo '<iframe id="foreground_app" src="'.$home_path.'apps/'.htmlspecialchars($_GET['foreground_app']).'/?lang='.$Lang.'"></iframe>';
 		}
 	?>
 

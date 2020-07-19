@@ -26,6 +26,22 @@
     display: inline-block; }
   #Menu #Menu__File:hover #Menu__File__Dropdown {
     display: block; }
+  #Menu #Menu__Edit__Dropdown {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    margin-left: 25%; }
+    #Menu #Menu__Edit__Dropdown div {
+      background-color: grey;
+      padding: 4px;
+      padding-right: 120%;
+      border-radius: 6px; }
+      #Menu #Menu__Edit__Dropdown div img {
+        width: 25%; }
+  #Menu #Menu__Edit {
+    display: inline-block; }
+  #Menu #Menu__Edit:hover #Menu__Edit__Dropdown {
+    display: block; }
 
 #MainTextArea {
   position: absolute;
@@ -50,7 +66,7 @@
   top: 0;
   left: 0; }
 
-#LoadForm {
+form {
   z-index: 150;
   background-color: white;
   width: 70%;
@@ -63,7 +79,7 @@
   position: relative;
   top: 40%;
   display: none; }
-  #LoadForm img {
+  form img {
     width: 4%;
     position: absolute;
     top: 15%;

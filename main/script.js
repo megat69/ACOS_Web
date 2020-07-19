@@ -1,6 +1,11 @@
 let foreground_app_expand = false;
 let resize_foreground_app = false;
 
+window.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+  return false;
+}, false);
+
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -23,10 +28,12 @@ function expandIFrame() {
 		IFrame.style.width = "94.5%";
 		IFrame.style.height = "100%";
 		foreground_app_expand = true;
+		document.getElementsByClassName('Expand').style.transform = 'rotateX(180deg)';
 	} else {
 		IFrame.style.width = "70%";
 		IFrame.style.height = "60%";
 		foreground_app_expand = false;
+		document.getElementsByClassName('Expand').style.transform = 'rotateX(0deg)';
 	}
 	
 }
@@ -62,6 +69,13 @@ function changeLang(given_value, foreground_app) {
 function changeTheme(given_value) {
 	if (getCookie('ACOS_Theme') != given_value) {
 		document.cookie = "ACOS_Theme="+ given_value +"; expires=Tue, 25 Mar 2032 12:00:00 UTC; path=/acos-remastered";
+		document.location.reload(true);
+	}
+}
+
+function customBackground(given_value) {
+	if (getCookie('ACOS_Background') != given_value) {
+		document.cookie = "ACOS_Background=CUSTOM:"+ given_value +"; expires=Tue, 25 Mar 2032 12:00:00 UTC; path=/acos-remastered";
 		document.location.reload(true);
 	}
 }
